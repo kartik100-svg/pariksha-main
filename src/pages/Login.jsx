@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
+import { useAuth } from "../context/AuthContext"; // Context import
 
 function Login() {
 
   const navigate = useNavigate();
+  const { login } = useAuth(); // Context se login function lo
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,25 +23,9 @@ function Login() {
         password,
         role,
       });
-      localStorage.setItem(
-        "token",
-        res.data.token
-      );
 
-      localStorage.setItem(
-        "user",
-        JSON.stringify(res.data.user)
-      );
-
-      localStorage.setItem(
-        "isLoggedIn",
-        "true"
-      );
-
-      localStorage.setItem(
-        "role",
-        res.data.user.role
-      );
+      // ✅ Context API me user store karo (state + localStorage dono)
+      login(res.data.user, res.data.token);
 
       alert("Login Successful");
 
