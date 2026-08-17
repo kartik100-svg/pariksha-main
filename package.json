@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@tensorflow-models/coco-ssd": "^2.2.3",
     "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.16.1",
@@ -20,7 +21,8 @@
     "react-rnd": "^10.5.3",
     "react-router-dom": "^7.15.1",
     "simple-peer": "^9.11.1",
-    "socket.io-client": "^4.8.3"
+    "socket.io-client": "^4.8.3",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

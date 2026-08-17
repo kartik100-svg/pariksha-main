@@ -1,5 +1,4 @@
-import "./App.css";
-
+import './index.css'
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -29,13 +28,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={darkMode ? "container dark" : "container light"}>
-        <h1>PARIKSHA</h1>
-        <h3>"Let's Crack It"</h3>
+      <div className={darkMode ? "min-h-screen w-full bg-[#0a0d16] text-white font-sans transition-colors duration-300" : "min-h-screen w-full bg-slate-900 text-white font-sans transition-colors duration-300"}>
+        <header className="pt-5 pb-2 px-4 text-center flex flex-col items-center justify-center">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent m-0">PARIKSHA</h1>
+          <h3 className="text-xs sm:text-sm font-medium text-slate-400 italic mt-0.5">"Let's Crack It"</h3>
+        </header>
 
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-        <div className="section">
+        <main className="w-full max-w-7xl mx-auto p-2 sm:p-6 lg:p-8">
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
@@ -148,7 +149,7 @@ function App() {
               }
             />
           </Routes>
-        </div>
+        </main>
       </div>
     </BrowserRouter>
   );
